@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<style>
+  @-webkit-keyframes argh-my-eyes {
+    0%   { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color:  #000; }
+    99% { background-color: #000; }
+    100% { background-color: #fff; }
+  }
+  @-moz-keyframes argh-my-eyes {
+    0%   { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color: #000; }
+    99% { background-color: #000; }
+    100% { background-color: #fff; }
+  }
+  @keyframes argh-my-eyes {
+    0%   { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color:  #000; }
+    99% { background-color: #000; }
+    100% { background-color: #fff; }
+  }
+  body {
+  -webkit-animation: argh-my-eyes .8s 3;
+  -moz-animation:    argh-my-eyes .5s 5;
+  animation:         argh-my-eyes .6s 3;
+}
+body {
+    background-color: OldLace;
+    margin-top: 150px;
+}
+h1 {
+    color: SteelBlue;
+    margin-left: 210px;
+} 
+
+</style>
+<body>
+
+
+
+<script>
+
+    window.onload = function() {
+    document.getElementById("welcome_sound").play();
+    if (audio.paused) {
+      document.getElementById("welcome_sound").play();
+      $('#play').removeClass('glyphicon-play-circle')
+      $('#play').addClass('glyphicon-pause')}
+}
+
+function clickFunction()
+{
+   var another_thing = parseInt(document.getElementById("numberForMultiples").value);
+   var myWindow = window.open("", "MsgWindow", "width=250, height=140,top=230,left=500");
+   myWindow.document.write('<font face="Verdana", size=7><table style="background-color: SteelBlue;color:OldLace;margin-left:40px;margin-top:25px"><tr><td>'+ another_thing + '</td><td>'+ another_thing * 2 + '</td><td>'+ another_thing * 3 + '</td><td>'+ another_thing * 4 + '</td><td>'+ another_thing * 5 + '</td></tr><tr><td>'+ another_thing * 6 + '</td><td>'+ another_thing * 7 + '</td><td>'+ another_thing * 8 + '</td><td>'+ another_thing * 9 + '</td><td>'+ another_thing * 10 + '</td></tr><tr><td>'+ another_thing * 11 + '</td><td>'+ another_thing * 12 + '</td><td>'+ another_thing * 13 + '</td><td>'+ another_thing * 14 + '</td><td>'+ another_thing * 15 + '</td></tr><tr><td>'+ another_thing * 16 + '</td><td>'+ another_thing * 17 + '</td><td>'+ another_thing * 18 + '</td><td>'+ another_thing * 19 + '</td><td>'+ another_thing * 20 + '</td></tr></table>');
+}
+
+function backwardsFunction()
+{
+   var wordInput = document.getElementById("wordSdrawkcab").value;
+   var stringMembers = wordInput.split("");
+   var stringBack = stringMembers.reverse();  
+   var stringBackFull = stringBack.join("");
+   document.getElementById("wordBack").innerHTML = stringBackFull;
+   var audio = document.getElementById("audio");
+   audio.play(); 
+   if (audio.paused) {
+      audio.play();
+      $('#play').removeClass('glyphicon-play-circle')
+      $('#play').addClass('glyphicon-pause')}
+   
+}
+
+
+</script>
+
+<audio id="welcome_sound" src="https://raw.githubusercontent.com/WigodskyD/data-sets/master/footsteps1.mp3"></audio>
+
+
+<h1>Enter a number to find multiples. <input type="text" id="numberForMultiples">
+<button onclick="clickFunction()">click</button>
+
+<h1  style="margin-top:50px">Enter a word to make backwards. <input type="text" id="wordSdrawkcab">
+<button onclick="backwardsFunction()">click</button>
+
+<p style="margin-left:470px;color:MediumSlateBlue" id="wordBack"></p>
+<audio id="audio" src="https://raw.githubusercontent.com/WigodskyD/data-sets/master/hauntedhouse.mp3" ></audio>
+
+
+
+
+
+</body>
+
+</html>
+
+<!-- Sources for audio and flashing effects: -->
+<!-- https://codepen.io/pixelthing/pen/QbxBYy -->
+<!-- https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click -->
